@@ -34,6 +34,8 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    [datePicker setDate:[NSDate date] animated:YES];
+    [datePicker setMaximumDate:[NSDate date]];
     channelList = [[NSArray alloc]
                    initWithObjects:
                    @"Miền Bắc",
@@ -146,7 +148,13 @@
     [resultTableViewController setChannelName:[channelList objectAtIndex:[indexPath row]]];
     
     NSMutableArray *result;
-    NSString *url = [NSString stringWithFormat:@"http://mtsms.site88.net/xs/xsapi.php?id=%d", [indexPath row]];
+    
+    NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"ddMMyyyy"];
+    NSDate *theDate = [NSDate dateWithTimeInterval:84600 sinceDate:[datePicker date]];
+    NSString *dateString = [dateFormatter stringFromDate:theDate];
+    
+    NSString *url = [NSString stringWithFormat:@"http://mtsms.site88.net/xs/xsapi.php?id=%d&date=%@", [indexPath row], dateString];
     result = [[NSMutableArray alloc] initWithArray:[self resultFromURLString:url]];
     for (int i = 2; i < [result count] / 2 + 1; i++) {
         NSMutableArray *temp = [result objectAtIndex:i];

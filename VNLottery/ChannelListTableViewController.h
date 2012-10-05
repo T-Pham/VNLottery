@@ -11,6 +11,7 @@
 @interface ChannelListTableViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate>
 {
     NSArray *channelList;
+    IBOutlet UIDatePicker *datePicker;
 }
 
 @end
