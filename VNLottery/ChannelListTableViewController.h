@@ -14,4 +14,6 @@
     IBOutlet UIDatePicker *datePicker;
 }
 
+- (IBAction) setTodayPicker:(id)sender;
+
 @end

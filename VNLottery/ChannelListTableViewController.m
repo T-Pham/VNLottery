@@ -211,4 +211,9 @@
     return returnArr;
 }
 
+- (void)setTodayPicker:(id)sender
+{
+    [datePicker setDate:[NSDate date] animated:YES];
+}
+
 @end

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		97637A51161EE579009C6DFC /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 97637A50161EE579009C6DFC /* Icon.png */; };
+		97637A54161EE57D009C6DFC /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 97637A53161EE57D009C6DFC /* Icon@2x.png */; };
 		979757EF161D306A005EEA60 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 979757EE161D306A005EEA60 /* UIKit.framework */; };
 		979757F1161D306A005EEA60 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 979757F0161D306A005EEA60 /* Foundation.framework */; };
 		979757F3161D306A005EEA60 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 979757F2161D306A005EEA60 /* CoreGraphics.framework */; };
@@ -23,6 +25,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		97637A50161EE579009C6DFC /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		97637A53161EE57D009C6DFC /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		979757EA161D306A005EEA60 /* VNLottery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VNLottery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		979757EE161D306A005EEA60 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		979757F0161D306A005EEA60 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -62,6 +66,8 @@
 		979757DF161D306A005EEA60 = {
 			isa = PBXGroup;
 			children = (
+				97637A53161EE57D009C6DFC /* Icon@2x.png */,
+				97637A50161EE579009C6DFC /* Icon.png */,
 				979757F4161D306A005EEA60 /* VNLottery */,
 				979757ED161D306A005EEA60 /* Frameworks */,
 				979757EB161D306A005EEA60 /* Products */,
@@ -174,6 +180,8 @@
 				97975803161D306A005EEA60 /* Default@2x.png in Resources */,
 				97975805161D306A005EEA60 /* Default-568h@2x.png in Resources */,
 				9797580E161D30B0005EEA60 /* VNLottery.storyboard in Resources */,
+				97637A51161EE579009C6DFC /* Icon.png in Resources */,
+				97637A54161EE57D009C6DFC /* Icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
