@@ -4,24 +4,32 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1926"/>
     </dependencies>
     <scenes>
-        <!--Channel List Table View Controller - Channel List-->
+        <!--Channel List Table View Controller - Đài-->
         <scene sceneID="E6z-yj-ImY">
             <objects>
-                <tableViewController id="o0O-NT-91i" customClass="ChannelListTableViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="Channel View" useStoryboardIdentifierAsRestorationIdentifier="YES" id="o0O-NT-91i" customClass="ChannelListTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Spf-sW-WDW">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="detailDisclosureButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="gHP-CP-83J">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Channel Cell" id="gHP-CP-83J" customClass="ChannelCell">
                                 <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" restorationIdentifier="" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="6ak-0v-p3C"/>
+                                    </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="6ak-0v-p3C" secondAttribute="trailing" constant="40" id="RmZ-6x-yQu"/>
+                                    <constraint firstItem="6ak-0v-p3C" firstAttribute="top" secondItem="gHP-CP-83J" secondAttribute="top" constant="3" id="Yzy-He-9hP"/>
+                                </constraints>
                                 <connections>
+                                    <outlet property="activityIndicator" destination="6ak-0v-p3C" id="L6d-rV-uBf"/>
                                     <segue destination="4EI-cJ-OpK" kind="push" trigger="accessoryAction" id="YXh-1b-mBQ"/>
                                 </connections>
                             </tableViewCell>
@@ -31,7 +39,7 @@
                             <outlet property="delegate" destination="o0O-NT-91i" id="lLJ-Hc-aUa"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Channel List" id="ocD-hf-qzH"/>
+                    <navigationItem key="navigationItem" title="Đài" id="ocD-hf-qzH"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oJa-ak-rzc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -40,13 +48,13 @@
         <!--Result Table View Controller - Channel Name - Date-->
         <scene sceneID="vHY-Sz-SMN">
             <objects>
-                <tableViewController restorationIdentifier="Result View" storyboardIdentifier="Result View" id="4EI-cJ-OpK" customClass="ResultTableViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="Result View" useStoryboardIdentifierAsRestorationIdentifier="YES" id="4EI-cJ-OpK" customClass="ResultTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="VXh-8k-3Od">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="k67-Kb-yHE">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Result Cell" id="k67-Kb-yHE">
                                 <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -70,7 +78,7 @@
         <!--Navigation Controller-->
         <scene sceneID="Uwq-yJ-TBg">
             <objects>
-                <navigationController definesPresentationContext="YES" id="tP8-aK-L6U" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="Navigation Controller" definesPresentationContext="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="tP8-aK-L6U" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="WGf-Ri-udT">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -83,14 +91,6 @@
             <point key="canvasLocation" x="80" y="-14"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="ChannelListTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ChannelListTableViewController.h"/>
-        </class>
-        <class className="ResultTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ResultTableViewController.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

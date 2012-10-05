@@ -1,20 +1,18 @@
 //
-//  ResultTableViewController.m
+//  TPMhhahaahaViewController.m
 //  VNLottery
 //
-//  Created by East Agile on 10/4/12.
+//  Created by East Agile on 10/5/12.
 //  Copyright (c) 2012 East Agile. All rights reserved.
 //
 
-#import "ResultTableViewController.h"
+#import "TPMhhahaahaViewController.h"
 
-@interface ResultTableViewController ()
+@interface TPMhhahaahaViewController ()
 
 @end
 
-@implementation ResultTableViewController
-@synthesize channelName;
-@synthesize result;
+@implementation TPMhhahaahaViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -34,8 +32,6 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    NSString *title = [NSString stringWithFormat:@"%@ - %@", channelName, [[result objectAtIndex:1] objectAtIndex:0]];
-    [self setTitle:title];
 }
 
 - (void)didReceiveMemoryWarning
@@ -48,44 +44,26 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
+#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return [result count] - 2;
+    return 0;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return [[result objectAtIndex:section + 2] count];
+    return 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell;
-    if ([indexPath section] != [result count] - 3) {
-        cell = [tableView dequeueReusableCellWithIdentifier:@"Result Cell"];
-        if (!cell) {
-            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Result Cell"];
-        }
-        [cell setSelectionStyle:UITableViewCellEditingStyleNone];
-        [[cell textLabel] setTextAlignment:NSTextAlignmentCenter];
-        [[cell textLabel] setText:[[result objectAtIndex:[indexPath section] + 2] objectAtIndex:[indexPath row]]];
-    } else {
-        cell = [tableView dequeueReusableCellWithIdentifier:@"Red Result Cell"];
-        if (!cell) {
-            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Red Result Cell"];
-        }
-        [cell setSelectionStyle:UITableViewCellEditingStyleNone];
-        [[cell textLabel] setTextAlignment:NSTextAlignmentCenter];
-        [[cell textLabel] setTextColor:[UIColor redColor]];
-        [[cell textLabel] setText:[[result objectAtIndex:[indexPath section] + 2] objectAtIndex:[indexPath row]]];
-    }
+    static NSString *CellIdentifier = @"Cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    
+    // Configure the cell...
+    
     return cell;
-}
-
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
-{
-    if (section == [result count] - 3) return @"Giải ĐB";
-    return [NSString stringWithFormat:@"Giải %d", [result count] - 3 - section];
 }
 
 /*

@@ -8,6 +8,7 @@
 
 #import "ChannelListTableViewController.h"
 #import "ResultTableViewController.h"
+#import "ChannelCell.h"
 
 @interface ChannelListTableViewController ()
 
@@ -80,11 +81,11 @@
     return [channelList count];
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+- (ChannelCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Result Cell"];
+    ChannelCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Channel Cell"];
     if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Result Cell"];
+        cell = [[ChannelCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Channel Cell"];
     }
     [[cell textLabel] setText:[channelList objectAtIndex:[indexPath row]]];
     return cell;
@@ -142,9 +143,64 @@
      */
     UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"VNLottery" bundle:nil];
     ResultTableViewController *resultTableViewController = (ResultTableViewController *)[mainStoryBoard instantiateViewControllerWithIdentifier:@"Result View"];
-    [resultTableViewController setChannelID:[indexPath row]];
     [resultTableViewController setChannelName:[channelList objectAtIndex:[indexPath row]]];
+    
+    NSMutableArray *result;
+    NSString *url = [NSString stringWithFormat:@"http://mtsms.site88.net/xs/xsapi.php?id=%d", [indexPath row]];
+    result = [[NSMutableArray alloc] initWithArray:[self resultFromURLString:url]];
+    for (int i = 2; i < [result count] / 2 + 1; i++) {
+        NSMutableArray *temp = [result objectAtIndex:i];
+        [result setObject:[result objectAtIndex:[result count] + 1 - i] atIndexedSubscript:i];
+        [result setObject:temp atIndexedSubscript:[result count] + 1 - i];
+    }
+    [resultTableViewController setResult:result];
+    
     [self.navigationController pushViewController:resultTableViewController animated:YES];
+    ChannelCell *cell = (ChannelCell *)[tableView cellForRowAtIndexPath:indexPath];
+    [[cell activityIndicator] stopAnimating];
+}
+
+- (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    ChannelCell *cell = (ChannelCell *)[tableView cellForRowAtIndexPath:indexPath];
+    [[cell activityIndicator] startAnimating];
+    return indexPath;
+}
+
+- (NSArray *)resultFromURLString:(NSString *)urlString
+{
+    NSMutableArray *returnArr = [[NSMutableArray alloc] init];
+    NSURL *urlRequest = [NSURL URLWithString:urlString];
+    NSError *err = nil;
+    NSString *html = [NSString stringWithContentsOfURL:urlRequest encoding:NSUTF8StringEncoding error:&err];
+    int trimPos = [html rangeOfString:@"\n<!-- Hosting24 Analytics Code -->"].location;
+    NSMutableString *localResult = [[NSMutableString alloc] initWithString:[html substringToIndex:trimPos]];
+    NSArray *arrLevel1 = [self arrayOfString:localResult splitedBy:@"<br/><br/>"];
+    for (int i = 0; i < [arrLevel1 count]; i++) {
+        NSArray *arrLevel2 = [self arrayOfString:[arrLevel1 objectAtIndex:i] splitedBy:@"<br/>"];
+        [returnArr addObject:arrLevel2];
+    }
+    return returnArr;
+}
+
+- (NSArray *)arrayOfString:(NSString *)orgString splitedBy:(NSString *)splitString
+{
+    NSMutableArray *returnArr = [[NSMutableArray alloc] init];
+    NSMutableString *tempString = [[NSMutableString alloc] initWithString:orgString];
+    while ([tempString length]) {
+        NSRange elemTrimRange = [tempString rangeOfString:splitString];
+        NSString *elemContent;
+        if (elemTrimRange.location != NSNotFound) {
+            elemContent = [tempString substringToIndex:elemTrimRange.location];
+            [tempString deleteCharactersInRange:NSRangeFromString([NSString stringWithFormat:@"{0 %d}", elemTrimRange.location + elemTrimRange.length])];
+        } else {
+            elemContent = [NSString stringWithString:tempString];
+            [tempString deleteCharactersInRange:NSRangeFromString([NSString stringWithFormat:@"{0 %d}", [tempString length]])];
+        }
+        [returnArr addObject:elemContent];
+        
+    }
+    return returnArr;
 }
 
 @end

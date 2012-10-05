@@ -12,7 +12,7 @@
 {
     
 }
-@property (nonatomic) int channelID;
 @property (nonatomic) NSString* channelName;
+@property (nonatomic) NSMutableArray *result;
 
 @end

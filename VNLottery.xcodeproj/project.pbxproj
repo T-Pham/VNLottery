@@ -19,6 +19,7 @@
 		9797580E161D30B0005EEA60 /* VNLottery.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9797580D161D30B0005EEA60 /* VNLottery.storyboard */; };
 		97975811161D31CC005EEA60 /* ChannelListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97975810161D31CC005EEA60 /* ChannelListTableViewController.m */; };
 		97975814161D33B6005EEA60 /* ResultTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97975813161D33B6005EEA60 /* ResultTableViewController.m */; };
+		97AE0E95161EC16C00C0C3F8 /* ChannelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 97AE0E94161EC16C00C0C3F8 /* ChannelCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,8 @@
 		97975810161D31CC005EEA60 /* ChannelListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChannelListTableViewController.m; sourceTree = "<group>"; };
 		97975812161D33B6005EEA60 /* ResultTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultTableViewController.h; sourceTree = "<group>"; };
 		97975813161D33B6005EEA60 /* ResultTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultTableViewController.m; sourceTree = "<group>"; };
+		97AE0E93161EC16C00C0C3F8 /* ChannelCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChannelCell.h; sourceTree = "<group>"; };
+		97AE0E94161EC16C00C0C3F8 /* ChannelCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChannelCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +93,8 @@
 				979757FE161D306A005EEA60 /* TPMAppDelegate.m */,
 				979757F5161D306A005EEA60 /* Supporting Files */,
 				9797580D161D30B0005EEA60 /* VNLottery.storyboard */,
+				97AE0E93161EC16C00C0C3F8 /* ChannelCell.h */,
+				97AE0E94161EC16C00C0C3F8 /* ChannelCell.m */,
 				9797580F161D31CC005EEA60 /* ChannelListTableViewController.h */,
 				97975810161D31CC005EEA60 /* ChannelListTableViewController.m */,
 				97975812161D33B6005EEA60 /* ResultTableViewController.h */,
@@ -183,6 +188,7 @@
 				979757FF161D306A005EEA60 /* TPMAppDelegate.m in Sources */,
 				97975811161D31CC005EEA60 /* ChannelListTableViewController.m in Sources */,
 				97975814161D33B6005EEA60 /* ResultTableViewController.m in Sources */,
+				97AE0E95161EC16C00C0C3F8 /* ChannelCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,7 +261,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "VNLottery/VNLottery-Prefix.pch";
 				INFOPLIST_FILE = "VNLottery/VNLottery-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -266,7 +274,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "VNLottery/VNLottery-Prefix.pch";
 				INFOPLIST_FILE = "VNLottery/VNLottery-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -290,6 +300,7 @@
 				9797580A161D306A005EEA60 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
