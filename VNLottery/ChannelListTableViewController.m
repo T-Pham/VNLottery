@@ -216,4 +216,9 @@
     [datePicker setDate:[NSDate date] animated:YES];
 }
 
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
+{
+    return (toInterfaceOrientation == UIInterfaceOrientationPortrait) || (UIInterfaceOrientationIsLandscape(toInterfaceOrientation));
+}
+
 @end
