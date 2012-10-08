@@ -89,6 +89,7 @@
     if (!cell) {
         cell = [[ChannelCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Channel Cell"];
     }
+    [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
     [[cell textLabel] setText:[channelList objectAtIndex:[indexPath row]]];
     return cell;
 }
