@@ -8,7 +8,6 @@
 
 #import "ChannelListTableViewController.h"
 #import "ResultTableViewController.h"
-#import "ChannelCell.h"
 
 @interface ChannelListTableViewController ()
 
@@ -83,11 +82,11 @@
     return [channelList count];
 }
 
-- (ChannelCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    ChannelCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Channel Cell"];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Channel Cell"];
     if (!cell) {
-        cell = [[ChannelCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Channel Cell"];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Channel Cell"];
     }
     [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
     [[cell textLabel] setText:[channelList objectAtIndex:[indexPath row]]];
@@ -165,15 +164,6 @@
     [resultTableViewController setResult:result];
     
     [self.navigationController pushViewController:resultTableViewController animated:YES];
-    ChannelCell *cell = (ChannelCell *)[tableView cellForRowAtIndexPath:indexPath];
-    [[cell activityIndicator] stopAnimating];
-}
-
-- (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    ChannelCell *cell = (ChannelCell *)[tableView cellForRowAtIndexPath:indexPath];
-    [[cell activityIndicator] startAnimating];
-    return indexPath;
 }
 
 - (NSArray *)resultFromURLString:(NSString *)urlString

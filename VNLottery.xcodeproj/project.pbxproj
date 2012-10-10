@@ -21,7 +21,6 @@
 		97975805161D306A005EEA60 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 97975804161D306A005EEA60 /* Default-568h@2x.png */; };
 		97975811161D31CC005EEA60 /* ChannelListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97975810161D31CC005EEA60 /* ChannelListTableViewController.m */; };
 		97975814161D33B6005EEA60 /* ResultTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97975813161D33B6005EEA60 /* ResultTableViewController.m */; };
-		97AE0E95161EC16C00C0C3F8 /* ChannelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 97AE0E94161EC16C00C0C3F8 /* ChannelCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,8 +44,6 @@
 		97975810161D31CC005EEA60 /* ChannelListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChannelListTableViewController.m; sourceTree = "<group>"; };
 		97975812161D33B6005EEA60 /* ResultTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultTableViewController.h; sourceTree = "<group>"; };
 		97975813161D33B6005EEA60 /* ResultTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultTableViewController.m; sourceTree = "<group>"; };
-		97AE0E93161EC16C00C0C3F8 /* ChannelCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChannelCell.h; sourceTree = "<group>"; };
-		97AE0E94161EC16C00C0C3F8 /* ChannelCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChannelCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,8 +95,6 @@
 				979757FD161D306A005EEA60 /* TPMAppDelegate.h */,
 				979757FE161D306A005EEA60 /* TPMAppDelegate.m */,
 				979757F5161D306A005EEA60 /* Supporting Files */,
-				97AE0E93161EC16C00C0C3F8 /* ChannelCell.h */,
-				97AE0E94161EC16C00C0C3F8 /* ChannelCell.m */,
 				9719E9F916227B5100C729A8 /* VNLottery.storyboard */,
 				9797580F161D31CC005EEA60 /* ChannelListTableViewController.h */,
 				97975810161D31CC005EEA60 /* ChannelListTableViewController.m */,
@@ -196,7 +191,6 @@
 				979757FF161D306A005EEA60 /* TPMAppDelegate.m in Sources */,
 				97975811161D31CC005EEA60 /* ChannelListTableViewController.m in Sources */,
 				97975814161D33B6005EEA60 /* ResultTableViewController.m in Sources */,
-				97AE0E95161EC16C00C0C3F8 /* ChannelCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
