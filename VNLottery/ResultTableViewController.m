@@ -16,14 +16,14 @@
 @synthesize channelName;
 @synthesize result;
 
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
+//- (id)initWithStyle:(UITableViewStyle)style
+//{
+//    self = [super initWithStyle:style];
+//    if (self) {
+//        // Custom initialization
+//    }
+//    return self;
+//}
 
 - (void)viewDidLoad
 {
@@ -140,9 +140,9 @@
      */
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
+- (void)swipeBack:(id)sender
 {
-    return (toInterfaceOrientation == UIInterfaceOrientationPortrait) || (UIInterfaceOrientationIsLandscape(toInterfaceOrientation));
+    [[self navigationController] popViewControllerAnimated:YES];
 }
 
 @end

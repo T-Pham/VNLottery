@@ -8,11 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ResultTableViewController : UITableViewController <UITableViewDataSource, UITabBarDelegate>
+@interface ResultTableViewController : UIViewController <UITableViewDataSource, UITabBarDelegate>
 {
     
 }
 @property (nonatomic) NSString* channelName;
 @property (nonatomic) NSMutableArray *result;
+
+- (IBAction)swipeBack:(id)sender;
 
 @end

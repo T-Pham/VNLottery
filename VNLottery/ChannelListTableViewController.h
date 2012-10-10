@@ -8,10 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ChannelListTableViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate>
+@interface ChannelListTableViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 {
     NSArray *channelList;
     IBOutlet UIDatePicker *datePicker;
+    IBOutlet UITableView *channelTableView;
 }
 
 - (IBAction) setTodayPicker:(id)sender;

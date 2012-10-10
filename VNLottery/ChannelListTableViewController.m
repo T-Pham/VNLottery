@@ -16,14 +16,14 @@
 
 @implementation ChannelListTableViewController
 
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
+//- (id)initWithStyle:(UITableViewStyle)style
+//{
+//    self = [super initWithStyle:style];
+//    if (self) {
+//        // Custom initialization
+//    }
+//    return self;
+//}
 
 - (void)viewDidLoad
 {
@@ -217,9 +217,11 @@
     [datePicker setDate:[NSDate date] animated:YES];
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
+- (void)viewWillAppear:(BOOL)animated
 {
-    return (toInterfaceOrientation == UIInterfaceOrientationPortrait) || (UIInterfaceOrientationIsLandscape(toInterfaceOrientation));
+    [super viewWillAppear:animated];
+    NSIndexPath *selectedIndexPath = [channelTableView indexPathForSelectedRow];
+    [channelTableView deselectRowAtIndexPath:selectedIndexPath animated:animated];
 }
 
 @end
