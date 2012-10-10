@@ -207,6 +207,12 @@
     [datePicker setDate:[NSDate date] animated:YES];
 }
 
+- (void)showAuthor:(id)sender
+{
+    UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"Tác giả" message:@"mtmaster\nahn.willta@yahoo.com" delegate:nil cancelButtonTitle:@"Đóng" otherButtonTitles:nil];
+    [av show];
+}
+
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];

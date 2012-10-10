@@ -15,6 +15,7 @@
     IBOutlet UITableView *channelTableView;
 }
 
-- (IBAction) setTodayPicker:(id)sender;
+- (IBAction)setTodayPicker:(id)sender;
+- (IBAction)showAuthor:(id)sender;
 
 @end

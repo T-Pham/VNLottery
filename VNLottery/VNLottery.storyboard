@@ -58,6 +58,11 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Đài" id="raR-FH-raR">
+                        <barButtonItem key="leftBarButtonItem" title="Tác giả" id="stC-eS-8M9">
+                            <connections>
+                                <action selector="showAuthor:" destination="Kcc-Ks-Qdm" id="jtY-Dt-3ZE"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Hôm nay" id="Yze-FS-29C">
                             <connections>
                                 <action selector="setTodayPicker:" destination="Kcc-Ks-Qdm" id="Fcd-zp-uPN"/>
